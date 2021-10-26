@@ -1,0 +1,13 @@
+﻿<Window x:Class="RAP_WithWPF.View.ShowNameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RAP_WithWPF.View"
+        mc:Ignorable="d"
+        Title="ShowNameWindow" Height="200" Width="400">
+    <Grid>
+        <Label Content="Researchers under Supervision:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="292" FontSize="16" FontWeight="Bold" FontFamily="Ink Free" Padding="5,2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+        <ListBox x:Name="supervisionList" ItemTemplate="{StaticResource supervisionListTemplate}" HorizontalAlignment="Left" Height="133" Margin="0,39,0,0" VerticalAlignment="Top" Width="395"/>
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local1="clr-namespace:RAP_WithWPF.View" x:Class="RAP_WithWPF.View.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="525" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Height="745">
+    <Grid>
+        <local1:ResearcherList x:Name="ResearcherListView" HorizontalAlignment="Left" Height="276" Margin="0,33,0,0" VerticalAlignment="Top" Width="144"/>
+        <local1:DetailsView x:Name="Details" HorizontalAlignment="Left" Height="283" Margin="149,33,0,0" VerticalAlignment="Top" Width="358" DataContext="{Binding ElementName=ResearcherListView, Path=SelectedItem}"/>
+        <Grid x:Name="PublicationsGrid" HorizontalAlignment="Right" Height="92" Margin="0,101,0,0" VerticalAlignment="Top" Width="368" Grid.Row="1"/>
+        <Label Content="Filtered By :" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="21" FontSize="10" FontFamily="Times New Roman"/>
+        <TextBox x:Name="nameFilterTxtBox" HorizontalAlignment="Left" Height="23" Margin="76,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Show :" HorizontalAlignment="Left" Margin="228,5,0,0" VerticalAlignment="Top" Height="21" FontFamily="Times New Roman" FontSize="10"/>
+        <ComboBox x:Name="levelFilterComboBox" HorizontalAlignment="Left" Margin="280,5,0,0" VerticalAlignment="Top" Width="120" Height="21">
+            <ComboBoxItem IsSelected="True" Content="All Researchers"/>
+            <ComboBoxItem Content="Student"/>
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="D"/>
+            <ComboBoxItem Content="E"/>
+        </ComboBox>
+        <Button x:Name="SearchBtn" Content="Search" HorizontalAlignment="Left" Margin="422,5,0,0" VerticalAlignment="Top" Width="75" Height="21" Click="SearchBtn_Click"/>
+        <local1:PublicationView Margin="152,340,0,0.5"/>
+    </Grid>
+</Window>

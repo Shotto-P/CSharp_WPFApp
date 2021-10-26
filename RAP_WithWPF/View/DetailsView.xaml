@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="RAP_WithWPF.View.DetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RAP_WithWPF.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="330">
+    <Border x:Name="DetailsBorder" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="2">
+        <Grid x:Name="DetailsGrid" HorizontalAlignment="Left" Margin="0,0,0,-105" VerticalAlignment="Top" Width="330">
+            <StackPanel Orientation="Horizontal" Height="16" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                <Label Content="Name" FontFamily="Times New Roman" Height="16" Padding="5,1,5,0" FontSize="11"/>
+                <Label x:Name="fullname" Content="{Binding FullName}" Padding="5,1,5,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="16" Margin="0,16,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                <Label Content="Title" Height="16" FontFamily="Times New Roman" FontSize="11" Padding="5,1,5,0"/>
+                <Label x:Name="title" Content="{Binding Title}" Padding="5,1,5,0"/>
+            </StackPanel>
+            <StackPanel Height="16" Margin="0,32,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <Label Content="Unit" Height="16" FontFamily="Times New Roman" FontSize="11" Padding="5,1,5,0"/>
+                <Label x:Name="unit" Content="{Binding Unit}" Padding="5,1,5,0"/>
+            </StackPanel>
+            <StackPanel Height="16" Margin="0,48,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <Label Content="Campus" Height="16" FontFamily="Times New Roman" FontSize="11" Padding="5,1,5,0"/>
+                <Label x:Name="campus" Content="{Binding Campus}" Padding="5,1,5,0"/>
+            </StackPanel>
+            <StackPanel Height="16" Margin="0,64,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <Label Content="Email" Height="16" FontFamily="Times New Roman" FontSize="11" Padding="5,1,5,0"/>
+                <Label x:Name="email" Content="{Binding Email}" Padding="5,1,5,0"/>
+            </StackPanel>
+            <StackPanel Height="16" Margin="0,80,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <Label Content="Current Job" Height="16" FontFamily="Times New Roman" FontSize="11" Padding="5,1,5,0"/>
+                <Label x:Name="position" Padding="5,1,5,0"/>
+            </StackPanel>
+            <StackPanel Height="16" Margin="0,96,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <Label Content="Commenced With Institution" Height="16" FontFamily="Times New Roman" FontSize="11" Padding="5,1,5,0"/>
+                <Label x:Name="institutionStartDate" Content="{Binding institutionStartTime}" ContentStringFormat="{}{0:dd/MM/yyyy}" Padding="5,1,5,0"/>
+            </StackPanel>
+            <StackPanel Height="16" Margin="0,112,0,0" Orientation="Horizontal" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                <Label Content="Commenced Current Position" Height="16" FontFamily="Times New Roman" FontSize="11" Padding="5,1,5,0"/>
+                <Label x:Name="positionStartDate" Padding="5,1,5,0"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="64" Margin="0,128,0,0" VerticalAlignment="Top" Width="298" Grid.ColumnSpan="2">
+                <Label Content="Previous Position" Height="16" FontFamily="Times New Roman" FontSize="11" Padding="5,1,5,0"/>
+                <ListBox x:Name="PrePosition" ItemTemplate="{StaticResource prePositionListTemplate}" Margin="3,0,0,0" Height="48" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="16" Margin="0,197,0,0" VerticalAlignment="Top" Orientation="Horizontal" Width="330">
+                <Label Content="Tenure:" Padding="10,1,5,0"/>
+                <Label x:Name="Tenure" ContentStringFormat="{}{0} year" Padding="5,3,10,0" Width="60" FontFamily="Times New Roman"/>
+                <Label Content="Publications:" Padding="10,1,5,0"/>
+                <Label x:Name="publicationsCount"  Padding="0,1,0,0" Width="16" FontFamily="Times New Roman" Height="16"/>
+                <Border x:Name="CumulativeBtnBorder" CornerRadius="5" BorderBrush="LightGray" BorderThickness="1" Margin="12,0,0,0">
+                    <Button x:Name="CumulativeBtn" Content="Cumulative Count" Margin="0" FontFamily="Times New Roman" FontSize="10" BorderThickness="0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Click="CumulativeBtn_Click"/>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="16" Margin="0,218,0,65">
+                <Label Content="3-Year Average:" Padding="10,1,5,0"/>
+                <Label x:Name="ThreeyearAverage" Padding="1,1,1,0" Width="20" FontFamily="Times New Roman"/>
+                <Label Content="Performance:" Padding="3,1,5,0"/>
+                <Label x:Name="performance" Padding="0,1,0,0" Width="114" Height="16" FontFamily="Times New Roman"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="16" Margin="0,239,0,0" VerticalAlignment="Top" Width="298" Orientation="Horizontal">
+                <Label Content="Supervisions:" Padding="10,1,5,0"/>
+                <Label x:Name="supervisions" Padding="0,1,0,0" Width="25" Height="16" FontFamily="Times New Roman"/>
+                <Border CornerRadius="5" BorderBrush="LightGray" BorderThickness="1" Margin="12,0,0,0">
+                    <Button x:Name="ShowNamesBtn" Content="Show Names" Margin="0" FontFamily="Times New Roman" FontSize="10" BorderThickness="0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Click="ShowNamesBtn_Click"/>
+                </Border>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="16" Margin="0,260,0,0" VerticalAlignment="Top" Width="330" Orientation="Horizontal">
+                <Label Content="Degree:" Padding="10,1,5,0"/>
+                <Label x:Name="degree" Padding="10,1,10,0" Width="60"/>
+                <Label Content="Supervisor:" Padding="3,1,5,0"/>
+                <Label x:Name="supervisor" Padding="0,1,0,0" FontFamily="Times New Roman" Height="16" Width="133"/>
+            </StackPanel>
+            <Image x:Name="avatar" HorizontalAlignment="Left" Height="84" Margin="239,7,0,0" VerticalAlignment="Top" Width="81"/>
+        </Grid>
+    </Border>
+</UserControl>
